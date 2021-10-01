@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text</title>
+</head>
+<style>
+    body{
+        text-align: center;
+
+    }
+    button{
+        display: block;
+        float: center;
+    }
+    .cont{
+        display: flex;
+        justify-content: center;
+        
+    }
+</style>
+<body>
+    <form id="form" onsubmit="sbmt() ; return false">
+        name: <input type="text" id="name">
+        <br><br>
+        <select id="selection">
+            gender : <option value="male">male</option>
+            <option value="female">female</option>
+        </select>
+        <br>
+        <br>
+        <input type="radio" name="grp" value="part1" id="part1">part1</input>
+        <input type="radio" name="grp" value="part2" id="part2">part2</input>
+        <input type="radio" name="grp" value="part3" id="part3">part3</input>
+        <input type="radio" name="grp" value="part4" id="part4">part4</input>
+        <input type="radio" name="grp" value="part5" id="part5">part5</input>
+        <br><br>
+        <div class="cont"><button class="cls1" type="submit">submit</button></div>
+    </form>
+    <p id="para">hello there is the result </p>
+    <p id="para2">this is age </p>
+    <p id="para3">your selected option is here </p>
+    
+</body>
+<script>
+    
+    
+    sbmt=()=>{
+        const name = document.getElementById('name').value
+        const para = document.getElementById('para')
+        const para2 = document.getElementById('para2')
+        const para3=document.getElementById('para3')
+        let opt = document.getElementById('selection')
+        const data = opt.options[opt.selectedIndex].value
+        para.innerHTML=`your name is ${name} `
+        para2.innerHTML=`your age is ${data}`
+        console.log('hello world ,i am working ')
+        if(document.querySelector('#part1').checked==true)
+        para3.innerHTML=`your selected option is part1`
+        else if(document.querySelector('#part2').checked==true)
+        para3.innerHTML=`your selected option is part2`
+        else if(document.querySelector('#part3').checked==true)
+        para3.innerHTML=`your selected option is part3`
+        else if(document.querySelector('#part4').checked==true)
+        para3.innerHTML=`your selected option is part4`
+        else if(document.querySelector('#part5').checked==true)
+        para3.innerHTML=`your selected option is part5`
+    }
+
+</script>
+</html>

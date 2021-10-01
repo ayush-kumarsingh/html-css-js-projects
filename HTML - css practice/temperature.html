@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thermometer </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<style>
+    .container{
+        font-size: 60px;
+    }
+    #img{
+        width: 100px;
+    }
+
+</style>
+
+<body bgcolor="yellow">
+    <div class="container">
+        <h1 >this is thermometer <span id="img"></span> </h1>
+    </div>
+
+</body>
+<script>
+    function showthermometer(){
+        var img = document.getElementById('img')
+        img.innerHTML="<i class='fa fa-thermometer-empty'></i>"
+        // console.log('0')
+        
+        setTimeout(function(){
+            img.innerHTML="<i class ='fa fa-thermometer-1'></i>"
+            // console.log('1')
+        },1000)
+        setTimeout(function(){
+            img.innerHTML="<i class ='fa fa-thermometer-2'></i>"
+            // console.log('2')
+
+        },2000)
+        setTimeout(function(){
+            img.innerHTML="<i class ='fa fa-thermometer-3'></i>"
+            // console.log('3')
+
+        },3000)
+        setTimeout(function(){
+            img.innerHTML="<i class ='fa fa-thermometer-full'></i>"
+            // console.log('4')
+
+        },4000)
+    }
+    showthermometer();
+    setInterval(() => {
+        showthermometer();
+    }, 5000);
+
+</script>
+
+</html>
